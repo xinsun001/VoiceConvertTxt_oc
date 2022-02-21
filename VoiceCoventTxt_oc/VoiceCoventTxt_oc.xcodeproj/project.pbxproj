@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12445CDC27BF3642008F8171 /* LanguageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12445CDB27BF3642008F8171 /* LanguageModel.m */; };
+		1249D90627BCA5AE00EE559E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D90527BCA5AE00EE559E /* AppDelegate.m */; };
+		1249D90927BCA5AE00EE559E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D90827BCA5AE00EE559E /* SceneDelegate.m */; };
+		1249D90C27BCA5AE00EE559E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D90B27BCA5AE00EE559E /* ViewController.m */; };
+		1249D90F27BCA5AE00EE559E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1249D90D27BCA5AE00EE559E /* Main.storyboard */; };
+		1249D91127BCA5AF00EE559E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1249D91027BCA5AF00EE559E /* Assets.xcassets */; };
+		1249D91427BCA5AF00EE559E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1249D91227BCA5AF00EE559E /* LaunchScreen.storyboard */; };
+		1249D91727BCA5AF00EE559E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D91627BCA5AF00EE559E /* main.m */; };
+		1249D92127BCA5B000EE559E /* VoiceCoventTxt_ocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D92027BCA5B000EE559E /* VoiceCoventTxt_ocTests.m */; };
+		1249D92B27BCA5B000EE559E /* VoiceCoventTxt_ocUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D92A27BCA5B000EE559E /* VoiceCoventTxt_ocUITests.m */; };
+		1249D92D27BCA5B000EE559E /* VoiceCoventTxt_ocUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D92C27BCA5B000EE559E /* VoiceCoventTxt_ocUITestsLaunchTests.m */; };
+		1249D93F27BCA8DC00EE559E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D93C27BCA8DB00EE559E /* SVProgressHUD.m */; };
+		1249D94027BCA8DC00EE559E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D93D27BCA8DB00EE559E /* SVIndefiniteAnimatedView.m */; };
+		1249D94127BCA8DC00EE559E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1249D93E27BCA8DB00EE559E /* SVProgressHUD.bundle */; };
+		1281229327C342D400557E42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229227C342D400557E42 /* CoreLocation.framework */; };
+		1281229527C342E000557E42 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229427C342DF00557E42 /* libz.tbd */; };
+		1281229727C342EC00557E42 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229627C342EC00557E42 /* libc++.tbd */; };
+		1281229927C342F500557E42 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229827C342F500557E42 /* CoreTelephony.framework */; };
+		1281229B27C342FD00557E42 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229A27C342FD00557E42 /* AVFoundation.framework */; };
+		1281229D27C3430A00557E42 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229C27C3430A00557E42 /* AddressBook.framework */; };
+		1281229F27C3431300557E42 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229E27C3431300557E42 /* AudioToolbox.framework */; };
+		128122A127C3431C00557E42 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A027C3431C00557E42 /* Contacts.framework */; };
+		128122A327C3432400557E42 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A227C3432400557E42 /* SystemConfiguration.framework */; };
+		128122A527C3432A00557E42 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A427C3432A00557E42 /* QuartzCore.framework */; };
+		128122A727C3433000557E42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A627C3433000557E42 /* UIKit.framework */; };
+		128122A927C3433C00557E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A827C3433C00557E42 /* Foundation.framework */; };
+		128122AB27C3434400557E42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122AA27C3434400557E42 /* CoreGraphics.framework */; };
+		128122AD27C3469600557E42 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122AC27C3469600557E42 /* iflyMSC.framework */; };
+		128122B027C36B6600557E42 /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 128122AF27C36B6600557E42 /* ISRDataHelper.m */; };
+		128122E027C3730400557E42 /* instruction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 128122DF27C3730400557E42 /* instruction.plist */; };
+		128122E327C37EB200557E42 /* CoventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 128122E227C37EB200557E42 /* CoventModel.m */; };
+		128122E627C38CEE00557E42 /* InstructionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128122E527C38CEE00557E42 /* InstructionViewController.m */; };
+		12CA811E27BE2A0200E2F562 /* ChooseLanguageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CA811D27BE2A0200E2F562 /* ChooseLanguageViewController.m */; };
+		12CA812027BE2ABF00E2F562 /* language.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12CA811F27BE2ABF00E2F562 /* language.plist */; };
+		CEB453E0DEA8BBB858C94489 /* libPods-VoiceCoventTxt_oc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47F4843C1D20FD5513A6F309 /* libPods-VoiceCoventTxt_oc.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1249D91D27BCA5B000EE559E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1249D8F927BCA5AE00EE559E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1249D90027BCA5AE00EE559E;
+			remoteInfo = VoiceCoventTxt_oc;
+		};
+		1249D92727BCA5B000EE559E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1249D8F927BCA5AE00EE559E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1249D90027BCA5AE00EE559E;
+			remoteInfo = VoiceCoventTxt_oc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05BC9EC15185CAB400CE6E89 /* Pods-VoiceCoventTxt_oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceCoventTxt_oc.debug.xcconfig"; path = "Target Support Files/Pods-VoiceCoventTxt_oc/Pods-VoiceCoventTxt_oc.debug.xcconfig"; sourceTree = "<group>"; };
+		0BC3718C9AA498CA7F956867 /* Pods-VoiceCoventTxt_oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceCoventTxt_oc.release.xcconfig"; path = "Target Support Files/Pods-VoiceCoventTxt_oc/Pods-VoiceCoventTxt_oc.release.xcconfig"; sourceTree = "<group>"; };
+		12445CDA27BF3642008F8171 /* LanguageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageModel.h; sourceTree = "<group>"; };
+		12445CDB27BF3642008F8171 /* LanguageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageModel.m; sourceTree = "<group>"; };
+		1249D90127BCA5AE00EE559E /* VoiceCoventTxt_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceCoventTxt_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1249D90427BCA5AE00EE559E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1249D90527BCA5AE00EE559E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1249D90727BCA5AE00EE559E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		1249D90827BCA5AE00EE559E /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		1249D90A27BCA5AE00EE559E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1249D90B27BCA5AE00EE559E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1249D90E27BCA5AE00EE559E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1249D91027BCA5AF00EE559E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1249D91327BCA5AF00EE559E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1249D91527BCA5AF00EE559E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1249D91627BCA5AF00EE559E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1249D91C27BCA5B000EE559E /* VoiceCoventTxt_ocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceCoventTxt_ocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1249D92027BCA5B000EE559E /* VoiceCoventTxt_ocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceCoventTxt_ocTests.m; sourceTree = "<group>"; };
+		1249D92627BCA5B000EE559E /* VoiceCoventTxt_ocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoiceCoventTxt_ocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1249D92A27BCA5B000EE559E /* VoiceCoventTxt_ocUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceCoventTxt_ocUITests.m; sourceTree = "<group>"; };
+		1249D92C27BCA5B000EE559E /* VoiceCoventTxt_ocUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VoiceCoventTxt_ocUITestsLaunchTests.m; sourceTree = "<group>"; };
+		1249D93A27BCA8DB00EE559E /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		1249D93B27BCA8DB00EE559E /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		1249D93C27BCA8DB00EE559E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		1249D93D27BCA8DB00EE559E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		1249D93E27BCA8DB00EE559E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		1281229227C342D400557E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1281229427C342DF00557E42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1281229627C342EC00557E42 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1281229827C342F500557E42 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1281229A27C342FD00557E42 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1281229C27C3430A00557E42 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		1281229E27C3431300557E42 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		128122A027C3431C00557E42 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		128122A227C3432400557E42 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		128122A427C3432A00557E42 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		128122A627C3433000557E42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		128122A827C3433C00557E42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		128122AA27C3434400557E42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		128122AC27C3469600557E42 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		128122AE27C36B6600557E42 /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
+		128122AF27C36B6600557E42 /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
+		128122DF27C3730400557E42 /* instruction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = instruction.plist; sourceTree = "<group>"; };
+		128122E127C37EB200557E42 /* CoventModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoventModel.h; sourceTree = "<group>"; };
+		128122E227C37EB200557E42 /* CoventModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoventModel.m; sourceTree = "<group>"; };
+		128122E427C38CEE00557E42 /* InstructionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstructionViewController.h; sourceTree = "<group>"; };
+		128122E527C38CEE00557E42 /* InstructionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstructionViewController.m; sourceTree = "<group>"; };
+		12CA811C27BE2A0200E2F562 /* ChooseLanguageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseLanguageViewController.h; sourceTree = "<group>"; };
+		12CA811D27BE2A0200E2F562 /* ChooseLanguageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseLanguageViewController.m; sourceTree = "<group>"; };
+		12CA811F27BE2ABF00E2F562 /* language.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = language.plist; sourceTree = "<group>"; };
+		47F4843C1D20FD5513A6F309 /* libPods-VoiceCoventTxt_oc.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VoiceCoventTxt_oc.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1249D8FE27BCA5AE00EE559E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128122AD27C3469600557E42 /* iflyMSC.framework in Frameworks */,
+				128122AB27C3434400557E42 /* CoreGraphics.framework in Frameworks */,
+				128122A927C3433C00557E42 /* Foundation.framework in Frameworks */,
+				128122A727C3433000557E42 /* UIKit.framework in Frameworks */,
+				128122A527C3432A00557E42 /* QuartzCore.framework in Frameworks */,
+				128122A327C3432400557E42 /* SystemConfiguration.framework in Frameworks */,
+				128122A127C3431C00557E42 /* Contacts.framework in Frameworks */,
+				1281229F27C3431300557E42 /* AudioToolbox.framework in Frameworks */,
+				1281229D27C3430A00557E42 /* AddressBook.framework in Frameworks */,
+				1281229B27C342FD00557E42 /* AVFoundation.framework in Frameworks */,
+				1281229927C342F500557E42 /* CoreTelephony.framework in Frameworks */,
+				1281229727C342EC00557E42 /* libc++.tbd in Frameworks */,
+				1281229527C342E000557E42 /* libz.tbd in Frameworks */,
+				1281229327C342D400557E42 /* CoreLocation.framework in Frameworks */,
+				CEB453E0DEA8BBB858C94489 /* libPods-VoiceCoventTxt_oc.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D91927BCA5B000EE559E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D92327BCA5B000EE559E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F0648BE51568DBA27F375A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05BC9EC15185CAB400CE6E89 /* Pods-VoiceCoventTxt_oc.debug.xcconfig */,
+				0BC3718C9AA498CA7F956867 /* Pods-VoiceCoventTxt_oc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1249D8F827BCA5AE00EE559E = {
+			isa = PBXGroup;
+			children = (
+				1249D90327BCA5AE00EE559E /* VoiceCoventTxt_oc */,
+				1249D91F27BCA5B000EE559E /* VoiceCoventTxt_ocTests */,
+				1249D92927BCA5B000EE559E /* VoiceCoventTxt_ocUITests */,
+				1249D90227BCA5AE00EE559E /* Products */,
+				0F0648BE51568DBA27F375A2 /* Pods */,
+				8655894E9D65083D02A02162 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1249D90227BCA5AE00EE559E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1249D90127BCA5AE00EE559E /* VoiceCoventTxt_oc.app */,
+				1249D91C27BCA5B000EE559E /* VoiceCoventTxt_ocTests.xctest */,
+				1249D92627BCA5B000EE559E /* VoiceCoventTxt_ocUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1249D90327BCA5AE00EE559E /* VoiceCoventTxt_oc */ = {
+			isa = PBXGroup;
+			children = (
+				1249D90427BCA5AE00EE559E /* AppDelegate.h */,
+				1249D90527BCA5AE00EE559E /* AppDelegate.m */,
+				1249D90727BCA5AE00EE559E /* SceneDelegate.h */,
+				1249D90827BCA5AE00EE559E /* SceneDelegate.m */,
+				1249D90A27BCA5AE00EE559E /* ViewController.h */,
+				1249D90B27BCA5AE00EE559E /* ViewController.m */,
+				128122E427C38CEE00557E42 /* InstructionViewController.h */,
+				128122E527C38CEE00557E42 /* InstructionViewController.m */,
+				12CA811C27BE2A0200E2F562 /* ChooseLanguageViewController.h */,
+				12CA811D27BE2A0200E2F562 /* ChooseLanguageViewController.m */,
+				128122E127C37EB200557E42 /* CoventModel.h */,
+				128122E227C37EB200557E42 /* CoventModel.m */,
+				12445CDA27BF3642008F8171 /* LanguageModel.h */,
+				12445CDB27BF3642008F8171 /* LanguageModel.m */,
+				128122AC27C3469600557E42 /* iflyMSC.framework */,
+				12CA811F27BE2ABF00E2F562 /* language.plist */,
+				128122DF27C3730400557E42 /* instruction.plist */,
+				128122AE27C36B6600557E42 /* ISRDataHelper.h */,
+				128122AF27C36B6600557E42 /* ISRDataHelper.m */,
+				1249D93927BCA8DB00EE559E /* SVProgressHUD */,
+				1249D90D27BCA5AE00EE559E /* Main.storyboard */,
+				1249D91027BCA5AF00EE559E /* Assets.xcassets */,
+				1249D91227BCA5AF00EE559E /* LaunchScreen.storyboard */,
+				1249D91527BCA5AF00EE559E /* Info.plist */,
+				1249D91627BCA5AF00EE559E /* main.m */,
+			);
+			path = VoiceCoventTxt_oc;
+			sourceTree = "<group>";
+		};
+		1249D91F27BCA5B000EE559E /* VoiceCoventTxt_ocTests */ = {
+			isa = PBXGroup;
+			children = (
+				1249D92027BCA5B000EE559E /* VoiceCoventTxt_ocTests.m */,
+			);
+			path = VoiceCoventTxt_ocTests;
+			sourceTree = "<group>";
+		};
+		1249D92927BCA5B000EE559E /* VoiceCoventTxt_ocUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1249D92A27BCA5B000EE559E /* VoiceCoventTxt_ocUITests.m */,
+				1249D92C27BCA5B000EE559E /* VoiceCoventTxt_ocUITestsLaunchTests.m */,
+			);
+			path = VoiceCoventTxt_ocUITests;
+			sourceTree = "<group>";
+		};
+		1249D93927BCA8DB00EE559E /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1249D93A27BCA8DB00EE559E /* SVIndefiniteAnimatedView.h */,
+				1249D93B27BCA8DB00EE559E /* SVProgressHUD.h */,
+				1249D93C27BCA8DB00EE559E /* SVProgressHUD.m */,
+				1249D93D27BCA8DB00EE559E /* SVIndefiniteAnimatedView.m */,
+				1249D93E27BCA8DB00EE559E /* SVProgressHUD.bundle */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		8655894E9D65083D02A02162 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				128122AA27C3434400557E42 /* CoreGraphics.framework */,
+				128122A827C3433C00557E42 /* Foundation.framework */,
+				128122A627C3433000557E42 /* UIKit.framework */,
+				128122A427C3432A00557E42 /* QuartzCore.framework */,
+				128122A227C3432400557E42 /* SystemConfiguration.framework */,
+				128122A027C3431C00557E42 /* Contacts.framework */,
+				1281229E27C3431300557E42 /* AudioToolbox.framework */,
+				1281229C27C3430A00557E42 /* AddressBook.framework */,
+				1281229A27C342FD00557E42 /* AVFoundation.framework */,
+				1281229827C342F500557E42 /* CoreTelephony.framework */,
+				1281229627C342EC00557E42 /* libc++.tbd */,
+				1281229427C342DF00557E42 /* libz.tbd */,
+				1281229227C342D400557E42 /* CoreLocation.framework */,
+				47F4843C1D20FD5513A6F309 /* libPods-VoiceCoventTxt_oc.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1249D90027BCA5AE00EE559E /* VoiceCoventTxt_oc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1249D93027BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_oc" */;
+			buildPhases = (
+				06B3E564EE322D85BD8CCAA9 /* [CP] Check Pods Manifest.lock */,
+				1249D8FD27BCA5AE00EE559E /* Sources */,
+				1249D8FE27BCA5AE00EE559E /* Frameworks */,
+				1249D8FF27BCA5AE00EE559E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceCoventTxt_oc;
+			productName = VoiceCoventTxt_oc;
+			productReference = 1249D90127BCA5AE00EE559E /* VoiceCoventTxt_oc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1249D91B27BCA5B000EE559E /* VoiceCoventTxt_ocTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1249D93327BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_ocTests" */;
+			buildPhases = (
+				1249D91827BCA5B000EE559E /* Sources */,
+				1249D91927BCA5B000EE559E /* Frameworks */,
+				1249D91A27BCA5B000EE559E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1249D91E27BCA5B000EE559E /* PBXTargetDependency */,
+			);
+			name = VoiceCoventTxt_ocTests;
+			productName = VoiceCoventTxt_ocTests;
+			productReference = 1249D91C27BCA5B000EE559E /* VoiceCoventTxt_ocTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1249D92527BCA5B000EE559E /* VoiceCoventTxt_ocUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1249D93627BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_ocUITests" */;
+			buildPhases = (
+				1249D92227BCA5B000EE559E /* Sources */,
+				1249D92327BCA5B000EE559E /* Frameworks */,
+				1249D92427BCA5B000EE559E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1249D92827BCA5B000EE559E /* PBXTargetDependency */,
+			);
+			name = VoiceCoventTxt_ocUITests;
+			productName = VoiceCoventTxt_ocUITests;
+			productReference = 1249D92627BCA5B000EE559E /* VoiceCoventTxt_ocUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1249D8F927BCA5AE00EE559E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					1249D90027BCA5AE00EE559E = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					1249D91B27BCA5B000EE559E = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 1249D90027BCA5AE00EE559E;
+					};
+					1249D92527BCA5B000EE559E = {
+						CreatedOnToolsVersion = 13.2;
+						TestTargetID = 1249D90027BCA5AE00EE559E;
+					};
+				};
+			};
+			buildConfigurationList = 1249D8FC27BCA5AE00EE559E /* Build configuration list for PBXProject "VoiceCoventTxt_oc" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1249D8F827BCA5AE00EE559E;
+			productRefGroup = 1249D90227BCA5AE00EE559E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1249D90027BCA5AE00EE559E /* VoiceCoventTxt_oc */,
+				1249D91B27BCA5B000EE559E /* VoiceCoventTxt_ocTests */,
+				1249D92527BCA5B000EE559E /* VoiceCoventTxt_ocUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1249D8FF27BCA5AE00EE559E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1249D91427BCA5AF00EE559E /* LaunchScreen.storyboard in Resources */,
+				1249D91127BCA5AF00EE559E /* Assets.xcassets in Resources */,
+				1249D90F27BCA5AE00EE559E /* Main.storyboard in Resources */,
+				128122E027C3730400557E42 /* instruction.plist in Resources */,
+				1249D94127BCA8DC00EE559E /* SVProgressHUD.bundle in Resources */,
+				12CA812027BE2ABF00E2F562 /* language.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D91A27BCA5B000EE559E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D92427BCA5B000EE559E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06B3E564EE322D85BD8CCAA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceCoventTxt_oc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1249D8FD27BCA5AE00EE559E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128122E627C38CEE00557E42 /* InstructionViewController.m in Sources */,
+				1249D90C27BCA5AE00EE559E /* ViewController.m in Sources */,
+				12CA811E27BE2A0200E2F562 /* ChooseLanguageViewController.m in Sources */,
+				1249D90627BCA5AE00EE559E /* AppDelegate.m in Sources */,
+				1249D93F27BCA8DC00EE559E /* SVProgressHUD.m in Sources */,
+				128122E327C37EB200557E42 /* CoventModel.m in Sources */,
+				1249D91727BCA5AF00EE559E /* main.m in Sources */,
+				1249D90927BCA5AE00EE559E /* SceneDelegate.m in Sources */,
+				128122B027C36B6600557E42 /* ISRDataHelper.m in Sources */,
+				1249D94027BCA8DC00EE559E /* SVIndefiniteAnimatedView.m in Sources */,
+				12445CDC27BF3642008F8171 /* LanguageModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D91827BCA5B000EE559E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1249D92127BCA5B000EE559E /* VoiceCoventTxt_ocTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1249D92227BCA5B000EE559E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1249D92B27BCA5B000EE559E /* VoiceCoventTxt_ocUITests.m in Sources */,
+				1249D92D27BCA5B000EE559E /* VoiceCoventTxt_ocUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1249D91E27BCA5B000EE559E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1249D90027BCA5AE00EE559E /* VoiceCoventTxt_oc */;
+			targetProxy = 1249D91D27BCA5B000EE559E /* PBXContainerItemProxy */;
+		};
+		1249D92827BCA5B000EE559E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1249D90027BCA5AE00EE559E /* VoiceCoventTxt_oc */;
+			targetProxy = 1249D92727BCA5B000EE559E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1249D90D27BCA5AE00EE559E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1249D90E27BCA5AE00EE559E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1249D91227BCA5AF00EE559E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1249D91327BCA5AF00EE559E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1249D92E27BCA5B000EE559E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1249D92F27BCA5B000EE559E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1249D93127BCA5B000EE559E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05BC9EC15185CAB400CE6E89 /* Pods-VoiceCoventTxt_oc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FZD29TPX2F;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceCoventTxt_oc",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-oc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1249D93227BCA5B000EE559E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BC3718C9AA498CA7F956867 /* Pods-VoiceCoventTxt_oc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FZD29TPX2F;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/VoiceCoventTxt_oc",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-oc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1249D93427BCA5B000EE559E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-ocTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceCoventTxt_oc.app/VoiceCoventTxt_oc";
+			};
+			name = Debug;
+		};
+		1249D93527BCA5B000EE559E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-ocTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VoiceCoventTxt_oc.app/VoiceCoventTxt_oc";
+			};
+			name = Release;
+		};
+		1249D93727BCA5B000EE559E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-ocUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceCoventTxt_oc;
+			};
+			name = Debug;
+		};
+		1249D93827BCA5B000EE559E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fz.dodtion.VoiceCoventTxt-ocUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = VoiceCoventTxt_oc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1249D8FC27BCA5AE00EE559E /* Build configuration list for PBXProject "VoiceCoventTxt_oc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1249D92E27BCA5B000EE559E /* Debug */,
+				1249D92F27BCA5B000EE559E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1249D93027BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_oc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1249D93127BCA5B000EE559E /* Debug */,
+				1249D93227BCA5B000EE559E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1249D93327BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_ocTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1249D93427BCA5B000EE559E /* Debug */,
+				1249D93527BCA5B000EE559E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1249D93627BCA5B000EE559E /* Build configuration list for PBXNativeTarget "VoiceCoventTxt_ocUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1249D93727BCA5B000EE559E /* Debug */,
+				1249D93827BCA5B000EE559E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1249D8F927BCA5AE00EE559E /* Project object */;
+}

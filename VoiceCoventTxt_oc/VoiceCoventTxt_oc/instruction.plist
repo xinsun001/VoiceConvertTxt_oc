@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>zh_CN</key>
+		<string>切换语言</string>
+		<key>function</key>
+		<string>speechChooseLanguage</string>
+	</dict>
+	<dict>
+		<key>zh_CN</key>
+		<string>退出APP</string>
+		<key>function</key>
+		<string>speechBackDeskTop</string>
+	</dict>
+</array>
+</plist>

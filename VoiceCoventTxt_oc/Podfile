@@ -1,0 +1,13 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, ‘10.0’
+target ‘VoiceCoventTxt_oc’ do
+ 
+ pod 'MJExtension'
+ pod 'Masonry'
+
+
+ 
+end
+
+
