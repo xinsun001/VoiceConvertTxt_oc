@@ -4,15 +4,15 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>英文</string>
-		<key>disc</key>
-		<string>en-GB</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>中文</string>
-		<key>disc</key>
+		<key>desc</key>
 		<string>zh-CN</string>
 	</dict>
+    <dict>
+        <key>name</key>
+        <string>英文</string>
+        <key>desc</key>
+        <string>en-GB</string>
+    </dict>
 </array>
 </plist>

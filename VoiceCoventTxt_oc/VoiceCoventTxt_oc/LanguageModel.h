@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LanguageModel : NSObject
 
 @property(nonatomic,copy)NSString *name;
-@property(nonatomic,copy)NSString *disc;
+@property(nonatomic,copy)NSString *desc;
 
 @end
 

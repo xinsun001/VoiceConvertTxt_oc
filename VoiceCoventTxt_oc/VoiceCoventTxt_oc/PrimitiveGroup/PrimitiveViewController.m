@@ -179,6 +179,9 @@
 
 -(void)setLanguageStr:(NSString *)languageStr{
     _languageStr = languageStr;
+    
+    NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:_languageStr];
+    self.speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -225,7 +228,7 @@
 
 -(void)setSpeech{
     if (_speechRecognizer == nil){
-        NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:self.languageStr];//英语就是 en_US
+        NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:self.languageStr];
         _speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
         _speechRecognizer.delegate = self;
     }
@@ -339,7 +342,7 @@
     vc.languageArray = modelArray;
     [vc setClickLanguageBlock:^(LanguageModel * _Nonnull model) {
         [weakSelf.languageButton setTitle:model.name forState:UIControlStateNormal];
-        weakSelf.languageStr = model.disc;
+        weakSelf.languageStr = model.desc;
     }];
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -551,26 +554,45 @@
 
 #pragma mark- 在本地方法库中寻找
 
+-(int )getLanguageCartoryNum{
+    if ([self.languageStr isEqualToString:@"zh_CN"]) {
+        return 1;
+    }else if ([self.languageStr isEqualToString:@"en_GB"]){
+        return 2;
+    }else{
+        //为0表示还为寻找到
+        return 0;
+    }
+}
+
 -(void)funOfMethod{
-    
-    NSString *txtofTextView = self.textView.text;
-    
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"instruction" ofType:@"plist"];
     NSArray  *fileArray = [NSArray arrayWithContentsOfFile:filePath];
     NSArray *modelArray=[CoventModel mj_objectArrayWithKeyValuesArray:fileArray];
 
     for (CoventModel *searchModel in modelArray) {
-        if ([txtofTextView containsString:searchModel.zh_CN]) {
-            NSString *showStr = [NSString stringWithFormat:@"%@值:\n中文:%@\n%@值:\n执行方法:%@",@"key",searchModel.zh_CN,@"value",searchModel.function];
-            self.instLabel.text = showStr;
-            
-            [self funcMothodAction:searchModel.function];
-            break;
-        }else{
-            self.instLabel.text = @"本地库中未查询到";
+        switch ([self getLanguageCartoryNum]) {
+            case 1:
+                [self getSearchStr:searchModel andContainStr:searchModel.zh_CN];
+                break;
+            case 2:
+                
+                break;
+            default:
+                break;
         }
     }
-    
+}
+
+-(void)getSearchStr:(CoventModel *)searchModel andContainStr:(NSString *)containStr{
+    NSString *txtofTextView = self.textView.text;
+    if ([txtofTextView containsString:containStr]) {
+        NSString *showStr = [NSString stringWithFormat:@"%@值:\n中文:%@\n%@值:\n执行方法:%@",@"key",containStr,@"value",searchModel.function];
+        self.instLabel.text = showStr;
+        [self funcMothodAction:searchModel.function];
+    }else{
+        self.instLabel.text = @"本地库中未查询到";
+    }
 }
 
 -(void)funcMothodAction:(NSString *)funStr{

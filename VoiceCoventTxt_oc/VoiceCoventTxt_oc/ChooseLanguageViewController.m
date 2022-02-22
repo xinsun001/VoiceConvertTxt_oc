@@ -84,7 +84,7 @@
     LanguageModel *model = self.languageArray[indexPath.row];
 
     cell.textLabel.text = model.name;
-    cell.detailTextLabel.text = model.disc;
+    cell.detailTextLabel.text = model.desc;
 
     
     return cell;
