@@ -14,5 +14,11 @@
 		<key>function</key>
 		<string>speechBackDeskTop</string>
 	</dict>
+    <dict>
+        <key>zh_CN</key>
+        <string>退出App</string>
+        <key>function</key>
+        <string>speechBackDeskTop</string>
+    </dict>
 </array>
 </plist>

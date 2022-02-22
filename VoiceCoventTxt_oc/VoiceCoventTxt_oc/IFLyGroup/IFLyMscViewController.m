@@ -52,6 +52,11 @@
 
 @implementation IFLyMscViewController
 
+-(void)dealloc{
+    
+    [self onEndOfSpeech];
+}
+
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
@@ -382,22 +387,17 @@
     self.textView.text = @"";
    
     if (self.coventButton.isSelected) {
-        
         [_iFlySpeechRecognizer stopListening];
         
         [self.coventButton setTitle:@"开始录音" forState:UIControlStateNormal];
-        
         self.coventButton.selected = NO;
 
     }else{
-        
         //启动识别服务
         [_iFlySpeechRecognizer startListening];
       
         [self.coventButton setTitle:@"结束录音" forState:UIControlStateNormal];
-
         self.coventButton.selected = YES;
-
     }
     
 }
