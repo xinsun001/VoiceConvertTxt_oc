@@ -21,6 +21,10 @@
 		1249D93F27BCA8DC00EE559E /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D93C27BCA8DB00EE559E /* SVProgressHUD.m */; };
 		1249D94027BCA8DC00EE559E /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D93D27BCA8DB00EE559E /* SVIndefiniteAnimatedView.m */; };
 		1249D94127BCA8DC00EE559E /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1249D93E27BCA8DB00EE559E /* SVProgressHUD.bundle */; };
+		125DC01E27C47433005C84A5 /* IFLyMscViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125DC01D27C47433005C84A5 /* IFLyMscViewController.m */; };
+		125DC02327C476A6005C84A5 /* PrimitiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 125DC02227C476A6005C84A5 /* PrimitiveViewController.m */; };
+		125DC02527C477B4005C84A5 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125DC02427C477B3005C84A5 /* iflyMSC.framework */; };
+		125DC02727C47EBD005C84A5 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 125DC02627C47EBD005C84A5 /* Speech.framework */; };
 		1281229327C342D400557E42 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229227C342D400557E42 /* CoreLocation.framework */; };
 		1281229527C342E000557E42 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229427C342DF00557E42 /* libz.tbd */; };
 		1281229727C342EC00557E42 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1281229627C342EC00557E42 /* libc++.tbd */; };
@@ -34,7 +38,6 @@
 		128122A727C3433000557E42 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A627C3433000557E42 /* UIKit.framework */; };
 		128122A927C3433C00557E42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122A827C3433C00557E42 /* Foundation.framework */; };
 		128122AB27C3434400557E42 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122AA27C3434400557E42 /* CoreGraphics.framework */; };
-		128122AD27C3469600557E42 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128122AC27C3469600557E42 /* iflyMSC.framework */; };
 		128122B027C36B6600557E42 /* ISRDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 128122AF27C36B6600557E42 /* ISRDataHelper.m */; };
 		128122E027C3730400557E42 /* instruction.plist in Resources */ = {isa = PBXBuildFile; fileRef = 128122DF27C3730400557E42 /* instruction.plist */; };
 		128122E327C37EB200557E42 /* CoventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 128122E227C37EB200557E42 /* CoventModel.m */; };
@@ -88,6 +91,12 @@
 		1249D93C27BCA8DB00EE559E /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		1249D93D27BCA8DB00EE559E /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		1249D93E27BCA8DB00EE559E /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		125DC01C27C47433005C84A5 /* IFLyMscViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFLyMscViewController.h; sourceTree = "<group>"; };
+		125DC01D27C47433005C84A5 /* IFLyMscViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IFLyMscViewController.m; sourceTree = "<group>"; };
+		125DC02127C476A6005C84A5 /* PrimitiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrimitiveViewController.h; sourceTree = "<group>"; };
+		125DC02227C476A6005C84A5 /* PrimitiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrimitiveViewController.m; sourceTree = "<group>"; };
+		125DC02427C477B3005C84A5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		125DC02627C47EBD005C84A5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		1281229227C342D400557E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1281229427C342DF00557E42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1281229627C342EC00557E42 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -101,7 +110,6 @@
 		128122A627C3433000557E42 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		128122A827C3433C00557E42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		128122AA27C3434400557E42 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		128122AC27C3469600557E42 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		128122AE27C36B6600557E42 /* ISRDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISRDataHelper.h; sourceTree = "<group>"; };
 		128122AF27C36B6600557E42 /* ISRDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISRDataHelper.m; sourceTree = "<group>"; };
 		128122DF27C3730400557E42 /* instruction.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = instruction.plist; sourceTree = "<group>"; };
@@ -120,10 +128,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128122AD27C3469600557E42 /* iflyMSC.framework in Frameworks */,
+				125DC02727C47EBD005C84A5 /* Speech.framework in Frameworks */,
 				128122AB27C3434400557E42 /* CoreGraphics.framework in Frameworks */,
 				128122A927C3433C00557E42 /* Foundation.framework in Frameworks */,
 				128122A727C3433000557E42 /* UIKit.framework in Frameworks */,
+				125DC02527C477B4005C84A5 /* iflyMSC.framework in Frameworks */,
 				128122A527C3432A00557E42 /* QuartzCore.framework in Frameworks */,
 				128122A327C3432400557E42 /* SystemConfiguration.framework in Frameworks */,
 				128122A127C3431C00557E42 /* Contacts.framework in Frameworks */,
@@ -191,6 +200,7 @@
 			children = (
 				1249D90427BCA5AE00EE559E /* AppDelegate.h */,
 				1249D90527BCA5AE00EE559E /* AppDelegate.m */,
+				1249D93927BCA8DB00EE559E /* SVProgressHUD */,
 				1249D90727BCA5AE00EE559E /* SceneDelegate.h */,
 				1249D90827BCA5AE00EE559E /* SceneDelegate.m */,
 				1249D90A27BCA5AE00EE559E /* ViewController.h */,
@@ -203,12 +213,10 @@
 				128122E227C37EB200557E42 /* CoventModel.m */,
 				12445CDA27BF3642008F8171 /* LanguageModel.h */,
 				12445CDB27BF3642008F8171 /* LanguageModel.m */,
-				128122AC27C3469600557E42 /* iflyMSC.framework */,
 				12CA811F27BE2ABF00E2F562 /* language.plist */,
 				128122DF27C3730400557E42 /* instruction.plist */,
-				128122AE27C36B6600557E42 /* ISRDataHelper.h */,
-				128122AF27C36B6600557E42 /* ISRDataHelper.m */,
-				1249D93927BCA8DB00EE559E /* SVProgressHUD */,
+				125DC02027C47688005C84A5 /* PrimitiveGroup */,
+				125DC01F27C47618005C84A5 /* IFLyGroup */,
 				1249D90D27BCA5AE00EE559E /* Main.storyboard */,
 				1249D91027BCA5AF00EE559E /* Assets.xcassets */,
 				1249D91227BCA5AF00EE559E /* LaunchScreen.storyboard */,
@@ -247,9 +255,31 @@
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
+		125DC01F27C47618005C84A5 /* IFLyGroup */ = {
+			isa = PBXGroup;
+			children = (
+				125DC02427C477B3005C84A5 /* iflyMSC.framework */,
+				128122AE27C36B6600557E42 /* ISRDataHelper.h */,
+				128122AF27C36B6600557E42 /* ISRDataHelper.m */,
+				125DC01C27C47433005C84A5 /* IFLyMscViewController.h */,
+				125DC01D27C47433005C84A5 /* IFLyMscViewController.m */,
+			);
+			path = IFLyGroup;
+			sourceTree = "<group>";
+		};
+		125DC02027C47688005C84A5 /* PrimitiveGroup */ = {
+			isa = PBXGroup;
+			children = (
+				125DC02127C476A6005C84A5 /* PrimitiveViewController.h */,
+				125DC02227C476A6005C84A5 /* PrimitiveViewController.m */,
+			);
+			path = PrimitiveGroup;
+			sourceTree = "<group>";
+		};
 		8655894E9D65083D02A02162 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				125DC02627C47EBD005C84A5 /* Speech.framework */,
 				128122AA27C3434400557E42 /* CoreGraphics.framework */,
 				128122A827C3433C00557E42 /* Foundation.framework */,
 				128122A627C3433000557E42 /* UIKit.framework */,
@@ -431,12 +461,14 @@
 				1249D90C27BCA5AE00EE559E /* ViewController.m in Sources */,
 				12CA811E27BE2A0200E2F562 /* ChooseLanguageViewController.m in Sources */,
 				1249D90627BCA5AE00EE559E /* AppDelegate.m in Sources */,
+				125DC01E27C47433005C84A5 /* IFLyMscViewController.m in Sources */,
 				1249D93F27BCA8DC00EE559E /* SVProgressHUD.m in Sources */,
 				128122E327C37EB200557E42 /* CoventModel.m in Sources */,
 				1249D91727BCA5AF00EE559E /* main.m in Sources */,
 				1249D90927BCA5AE00EE559E /* SceneDelegate.m in Sources */,
 				128122B027C36B6600557E42 /* ISRDataHelper.m in Sources */,
 				1249D94027BCA8DC00EE559E /* SVIndefiniteAnimatedView.m in Sources */,
+				125DC02327C476A6005C84A5 /* PrimitiveViewController.m in Sources */,
 				12445CDC27BF3642008F8171 /* LanguageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,9 +651,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VoiceCoventTxt_oc",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VoiceCoventTxt_oc/IFLyGroup",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "语音助手";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "麦克风授权";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "语音识别功能授权";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -654,9 +690,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/VoiceCoventTxt_oc",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/VoiceCoventTxt_oc/IFLyGroup",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "语音助手";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "麦克风授权";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "语音识别功能授权";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
