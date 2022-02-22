@@ -1,0 +1,23 @@
+//
+//  Common.pch
+//  VoiceCoventTxt_oc
+//
+//  Created by facilityone on 2022/2/22.
+//
+
+#ifndef Common_pch
+#define Common_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+
+//科大讯飞appid
+#define APPID_VALUE           @"5a127423"
+
+#define zhCN @"zh_CN"
+#define enGB @"en_GB"
+
+#endif /* Common_pch */

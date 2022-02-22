@@ -97,6 +97,7 @@
 		125DC02227C476A6005C84A5 /* PrimitiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrimitiveViewController.m; sourceTree = "<group>"; };
 		125DC02427C477B3005C84A5 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		125DC02627C47EBD005C84A5 /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		125DC02827C4DBC8005C84A5 /* Common.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.pch; sourceTree = "<group>"; };
 		1281229227C342D400557E42 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1281229427C342DF00557E42 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1281229627C342EC00557E42 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -203,6 +204,7 @@
 				1249D93927BCA8DB00EE559E /* SVProgressHUD */,
 				1249D90727BCA5AE00EE559E /* SceneDelegate.h */,
 				1249D90827BCA5AE00EE559E /* SceneDelegate.m */,
+				125DC02827C4DBC8005C84A5 /* Common.pch */,
 				1249D90A27BCA5AE00EE559E /* ViewController.h */,
 				1249D90B27BCA5AE00EE559E /* ViewController.m */,
 				128122E427C38CEE00557E42 /* InstructionViewController.h */,
@@ -653,6 +655,8 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VoiceCoventTxt_oc/IFLyGroup",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/facilityone/demo/VoiceCoventTxt_oc/VoiceCoventTxt_oc/VoiceCoventTxt_oc/Common.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "语音助手";
@@ -692,6 +696,8 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/VoiceCoventTxt_oc/IFLyGroup",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/facilityone/demo/VoiceCoventTxt_oc/VoiceCoventTxt_oc/VoiceCoventTxt_oc/Common.pch;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VoiceCoventTxt_oc/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "语音助手";

@@ -20,9 +20,6 @@
 #import <Speech/Speech.h>
 #import <AVFoundation/AVFoundation.h>
 
-#define screenHeight [UIScreen mainScreen].bounds.size.height
-#define screenWidth [UIScreen mainScreen].bounds.size.width
-
 @interface PrimitiveViewController ()<SFSpeechRecognitionTaskDelegate,SFSpeechRecognizerDelegate>
 
 @property(nonatomic,strong)UILabel *txtLabel;
@@ -202,7 +199,7 @@
     UIBarButtonItem *rightBtnitem = [[UIBarButtonItem alloc] initWithTitle:@"指令库" style:UIBarButtonItemStyleDone target:self action:@selector(getDataAction)];
     self.navigationItem.rightBarButtonItem = rightBtnitem;
     
-    self.languageStr = @"zh_CN";
+    self.languageStr = zhCN;
     
     [self setSpeech];
     
@@ -227,7 +224,7 @@
 #pragma mark- 录音器初始化
 
 -(void)setSpeech{
-    if (_speechRecognizer == nil){
+    if (!_speechRecognizer){
         NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:self.languageStr];
         _speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
         _speechRecognizer.delegate = self;
@@ -555,9 +552,9 @@
 #pragma mark- 在本地方法库中寻找
 
 -(int )getLanguageCartoryNum{
-    if ([self.languageStr isEqualToString:@"zh_CN"]) {
+    if ([self.languageStr isEqualToString:zhCN]) {
         return 1;
-    }else if ([self.languageStr isEqualToString:@"en_GB"]){
+    }else if ([self.languageStr isEqualToString:enGB]){
         return 2;
     }else{
         //为0表示还为寻找到
@@ -575,10 +572,8 @@
             case 1:
                 [self getSearchStr:searchModel andContainStr:searchModel.zh_CN];
                 break;
-            case 2:
-                
-                break;
             default:
+                self.instLabel.text = @"本地库中未查询到";
                 break;
         }
     }

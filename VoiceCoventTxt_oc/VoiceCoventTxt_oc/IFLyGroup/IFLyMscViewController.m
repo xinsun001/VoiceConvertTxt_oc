@@ -22,13 +22,6 @@
 #import "iflyMSC.framework/Headers/IFlyMSC.h"
 #import "ISRDataHelper.h"
 
-
-#define screenHeight [UIScreen mainScreen].bounds.size.height
-#define screenWidth [UIScreen mainScreen].bounds.size.width
-
-#define APPID_VALUE           @"5a127423"
-
-
 @interface IFLyMscViewController ()<IFlySpeechRecognizerDelegate>
 
 @property(nonatomic,strong)UILabel *txtLabel;
@@ -122,7 +115,7 @@
         [_languageButton setTitle:@"中文" forState:UIControlStateNormal];
         _languageButton.layer.borderColor = [UIColor grayColor].CGColor;
         _languageButton.layer.borderWidth = 1;
-        [_languageButton addTarget:self action:@selector(languageButtonAction) forControlEvents:UIControlEventTouchUpInside];
+//        [_languageButton addTarget:self action:@selector(languageButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _languageButton;
 }
@@ -196,8 +189,8 @@
     UIBarButtonItem *rightBtnitem = [[UIBarButtonItem alloc] initWithTitle:@"指令库" style:UIBarButtonItemStyleDone target:self action:@selector(getDataAction)];
     self.navigationItem.rightBarButtonItem = rightBtnitem;
     
-    self.languageStr = @"zh_CN";
-    
+    self.languageStr = zhCN;
+
     [self setIFlySpeech];
     
     [self setUI];
@@ -460,11 +453,10 @@
 
 #pragma mark- 在本地方法库中寻找
 
-
 -(int )getLanguageCartoryNum{
-    if ([self.languageStr isEqualToString:@"zh_CN"]) {
+    if ([self.languageStr isEqualToString:zhCN]) {
         return 1;
-    }else if ([self.languageStr isEqualToString:@"en_GB"]){
+    }else if ([self.languageStr isEqualToString:enGB]){
         return 2;
     }else{
         //为0表示还为寻找到
@@ -482,10 +474,8 @@
             case 1:
                 [self getSearchStr:searchModel andContainStr:searchModel.zh_CN];
                 break;
-            case 2:
-                
-                break;
             default:
+                self.instLabel.text = @"本地库中未查询到";
                 break;
         }
     }

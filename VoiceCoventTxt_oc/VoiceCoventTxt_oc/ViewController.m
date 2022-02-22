@@ -9,10 +9,6 @@
 #import "IFLyMscViewController.h"
 #import "PrimitiveViewController.h"
 
-#define screenHeight [UIScreen mainScreen].bounds.size.height
-#define screenWidth [UIScreen mainScreen].bounds.size.width
-
-
 @interface ViewController ()
 @end
 
