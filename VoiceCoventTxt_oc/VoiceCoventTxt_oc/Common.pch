@@ -18,6 +18,6 @@
 #define APPID_VALUE           @"5a127423"
 
 #define zhCN @"zh_CN"
-#define enGB @"en_GB"
+#define enGB @"en_us"
 
 #endif /* Common_pch */

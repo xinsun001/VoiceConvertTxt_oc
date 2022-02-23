@@ -115,7 +115,7 @@
         [_languageButton setTitle:@"中文" forState:UIControlStateNormal];
         _languageButton.layer.borderColor = [UIColor grayColor].CGColor;
         _languageButton.layer.borderWidth = 1;
-//        [_languageButton addTarget:self action:@selector(languageButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        [_languageButton addTarget:self action:@selector(languageButtonAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _languageButton;
 }
@@ -166,6 +166,9 @@
 
 -(void)setLanguageStr:(NSString *)languageStr{
     _languageStr = languageStr;
+    
+    [_iFlySpeechRecognizer setParameter:self.languageStr forKey:[IFlySpeechConstant LANGUAGE]];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated{

@@ -6,13 +6,13 @@
 		<key>name</key>
 		<string>中文</string>
 		<key>desc</key>
-		<string>zh-CN</string>
+		<string>zh_CN</string>
 	</dict>
-    <dict>
-        <key>name</key>
-        <string>英文</string>
-        <key>desc</key>
-        <string>en-GB</string>
-    </dict>
+	<dict>
+		<key>name</key>
+		<string>英文</string>
+		<key>desc</key>
+		<string>en_us</string>
+	</dict>
 </array>
 </plist>
