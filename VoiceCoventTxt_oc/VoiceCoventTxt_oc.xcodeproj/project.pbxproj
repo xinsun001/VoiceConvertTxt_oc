@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123A524028050D5400BB9E04 /* VoiceCoventTxtHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 123A523E28050D5300BB9E04 /* VoiceCoventTxtHelper.m */; };
 		12445CDC27BF3642008F8171 /* LanguageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 12445CDB27BF3642008F8171 /* LanguageModel.m */; };
 		1249D90627BCA5AE00EE559E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D90527BCA5AE00EE559E /* AppDelegate.m */; };
 		1249D90927BCA5AE00EE559E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1249D90827BCA5AE00EE559E /* SceneDelegate.m */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		05BC9EC15185CAB400CE6E89 /* Pods-VoiceCoventTxt_oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceCoventTxt_oc.debug.xcconfig"; path = "Target Support Files/Pods-VoiceCoventTxt_oc/Pods-VoiceCoventTxt_oc.debug.xcconfig"; sourceTree = "<group>"; };
 		0BC3718C9AA498CA7F956867 /* Pods-VoiceCoventTxt_oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceCoventTxt_oc.release.xcconfig"; path = "Target Support Files/Pods-VoiceCoventTxt_oc/Pods-VoiceCoventTxt_oc.release.xcconfig"; sourceTree = "<group>"; };
+		123A523E28050D5300BB9E04 /* VoiceCoventTxtHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceCoventTxtHelper.m; sourceTree = "<group>"; };
+		123A523F28050D5300BB9E04 /* VoiceCoventTxtHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceCoventTxtHelper.h; sourceTree = "<group>"; };
 		12445CDA27BF3642008F8171 /* LanguageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageModel.h; sourceTree = "<group>"; };
 		12445CDB27BF3642008F8171 /* LanguageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageModel.m; sourceTree = "<group>"; };
 		1249D90127BCA5AE00EE559E /* VoiceCoventTxt_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceCoventTxt_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -274,6 +277,8 @@
 			children = (
 				125DC02127C476A6005C84A5 /* PrimitiveViewController.h */,
 				125DC02227C476A6005C84A5 /* PrimitiveViewController.m */,
+				123A523F28050D5300BB9E04 /* VoiceCoventTxtHelper.h */,
+				123A523E28050D5300BB9E04 /* VoiceCoventTxtHelper.m */,
 			);
 			path = PrimitiveGroup;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				1249D93F27BCA8DC00EE559E /* SVProgressHUD.m in Sources */,
 				128122E327C37EB200557E42 /* CoventModel.m in Sources */,
 				1249D91727BCA5AF00EE559E /* main.m in Sources */,
+				123A524028050D5400BB9E04 /* VoiceCoventTxtHelper.m in Sources */,
 				1249D90927BCA5AE00EE559E /* SceneDelegate.m in Sources */,
 				128122B027C36B6600557E42 /* ISRDataHelper.m in Sources */,
 				1249D94027BCA8DC00EE559E /* SVIndefiniteAnimatedView.m in Sources */,

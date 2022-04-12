@@ -17,10 +17,10 @@
 #import "LanguageModel.h"
 #import "CoventModel.h"
 
-#import <Speech/Speech.h>
-#import <AVFoundation/AVFoundation.h>
+#import "VoiceCoventTxtHelper.h"
 
-@interface PrimitiveViewController ()<SFSpeechRecognitionTaskDelegate,SFSpeechRecognizerDelegate>
+
+@interface PrimitiveViewController ()
 
 @property(nonatomic,strong)UILabel *txtLabel;
 @property(nonatomic,strong)UITextView *textView;
@@ -36,28 +36,13 @@
 
 @property(nonatomic,strong)NSString *languageStr;
 
-
-
-@property (strong, nonatomic)SFSpeechRecognitionTask *recognitionTask; //语音识别任务
-@property (strong, nonatomic)SFSpeechRecognizer *speechRecognizer; //语音识别器
-@property (strong, nonatomic)SFSpeechAudioBufferRecognitionRequest *recognitionRequest; //识别请求
-@property (strong, nonatomic)AVAudioEngine *audioEngine; //录音引擎
-
-/** 监听设备 */
-@property (nonatomic, strong) AVAudioRecorder *monitor;
-/** 监听器 URL */
-@property (nonatomic, strong) NSURL *monitorURL;
-/** 定时器 */
-@property (nonatomic, strong) NSTimer *timer;
-
-@property (nonatomic, assign) NSTimeInterval nonVoiceInterVal;
+@property (nonatomic, strong) VoiceCoventTxtHelper *voiceHelper;
 
 @end
 
 @implementation PrimitiveViewController
 
 -(void)dealloc{
-    [self stopAvaudio];
 }
 
 
@@ -164,27 +149,30 @@
 }
 
 -(void)coventButtonAction{
+
     [self startSpeech];
+
 }
 
-//-(void)getlange{
-//
-//    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-//    NSArray* languages = [defaults objectForKey:@"AppleLanguages"];
-//}
 
+#pragma mark- 查看指令库
 
--(void)setLanguageStr:(NSString *)languageStr{
-    _languageStr = languageStr;
+-(void)getDataAction{
     
-    NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:_languageStr];
-    self.speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"instruction" ofType:@"plist"];
+    NSArray  *fileArray = [NSArray arrayWithContentsOfFile:filePath];
+    NSArray *modelArray=[CoventModel mj_objectArrayWithKeyValuesArray:fileArray];
+
+    InstructionViewController *vc = [InstructionViewController new];
+    vc.instructionArray = modelArray;
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
+
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-    [self checkSpeechFunction];
 }
 
 
@@ -201,59 +189,110 @@
     
     self.languageStr = zhCN;
     
-    [self setSpeech];
+    __weak typeof(self)  weakSelf=self;
+
+    self.voiceHelper = [VoiceCoventTxtHelper new];
+    [self.voiceHelper checkSpeechFunction:^(NSString * _Nonnull str) {
+        //初始化语音交互窗口
+        [weakSelf showAlert:str];
+    } andFail:^(NSString * _Nonnull str) {
+        [weakSelf showAlert:str];
+    }];
     
     [self setUI];
     
 }
 
-#pragma mark- 查看指令库
+#pragma mark- 录音操作
 
--(void)getDataAction{
+-(void)startSpeech{
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"instruction" ofType:@"plist"];
-    NSArray  *fileArray = [NSArray arrayWithContentsOfFile:filePath];
-    NSArray *modelArray=[CoventModel mj_objectArrayWithKeyValuesArray:fileArray];
+    self.textView.text = @"";
+   
+    if (self.coventButton.isSelected) {
+        [self stopAvaudio];
+    }else{
+        [self startAvaudio];
+    }
+}
 
-    InstructionViewController *vc = [InstructionViewController new];
-    vc.instructionArray = modelArray;
-    [self.navigationController pushViewController:vc animated:YES];
+- (void)startAvaudio{
+    [self.coventButton setTitle:@"结束录音" forState:UIControlStateNormal];
+    self.coventButton.selected = YES;
+    [self setSpeech];
     
+}
+
+- (void)stopAvaudio{
+    
+    [self.voiceHelper stopAvaudio];
+    [self.coventButton setTitle:@"开始录音" forState:UIControlStateNormal];
+    self.coventButton.selected = NO;
+    [SVProgressHUD dismiss];
+    
+}
+
+-(void)showAlert:(NSString *)str{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil  message:str preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"确定", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark- 录音器初始化
 
 -(void)setSpeech{
-    if (!_speechRecognizer){
-        NSLocale *cale = [[NSLocale alloc] initWithLocaleIdentifier:self.languageStr];
-        _speechRecognizer = [[SFSpeechRecognizer alloc]initWithLocale:cale];
-        _speechRecognizer.delegate = self;
-    }
+    __weak typeof(self)  weakSelf=self;
     
-    if (_audioEngine == nil) {
-        _audioEngine = [[AVAudioEngine alloc] init];
-    }
+    //语音输入状态已改变
+    [self.voiceHelper setSpeehStatusChangeBlock:^(NSString * _Nonnull str) {
+        [weakSelf showAlert:str];
+    }];
     
-    // 1. 音频会话
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:NULL];
+    //5秒内没检测到声音
+    [self.voiceHelper setNoVoiceBlock:^{
+        //显示未检测到声音
+        weakSelf.textView.text = @"未检测到声音";
+        [weakSelf stopAvaudio];
+    }];
     
-    // 参数设置
-    NSDictionary *recordSettings = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                    //采样率
-                                    [NSNumber numberWithFloat: 44100.0], AVSampleRateKey,
-                                    //录音格式
-                                    [NSNumber numberWithInt: kAudioFormatAppleIMA4], AVFormatIDKey,
-                                    //双声道
-                                    [NSNumber numberWithInt: 2], AVNumberOfChannelsKey,
-                                    //声音质量
-                                    [NSNumber numberWithInt: AVAudioQualityMax], AVEncoderAudioQualityKey,
-                                    nil];
+    //说完话几秒内没有声音
+    [self.voiceHelper setOverVoiceBlock:^{
+        [weakSelf stopAvaudio];
+//        NSLog(@"捕获语音信息----\n%@",weakSelf..text);
+    }];
     
-    // 监听器
-    NSString *monitorPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"monitor.caf"];
-    _monitorURL = [NSURL fileURLWithPath:monitorPath];
-    _monitor = [[AVAudioRecorder alloc] initWithURL:_monitorURL settings:recordSettings error:NULL];
-    _monitor.meteringEnabled = YES;
+    dispatch_queue_t asynchronousQueue = dispatch_queue_create("voiceStart", NULL);
+    dispatch_async(asynchronousQueue, ^{
+        [self.voiceHelper setSpeech];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.voiceHelper startAvaudio:^(NSString * _Nonnull str) {
+//                NSLog(@"检测到了语音---\n%@",str);
+                weakSelf.textView.text = str;
+            } andFinish:^(NSString * _Nonnull str) {
+//                NSLog(@"最终的语音转文字---\n%@",str);
+                weakSelf.textView.text = str;
+                if (str.length > 0) {
+                    [weakSelf funOfMethod];
+                }
+                [weakSelf stopAvaudio];
+            } andDeviceFail:^(NSString * _Nonnull str) {
+                [weakSelf showAlert:str];
+                [weakSelf stopAvaudio];
+            } andAudioFail:^(NSString * _Nonnull str) {
+                [weakSelf showAlert:str];
+                [weakSelf stopAvaudio];
+            }];
+        });
+    });
+    
+    [self.voiceHelper setStopAudioBlock:^{
+        //延迟一秒才可以点击
+        weakSelf.coventButton.userInteractionEnabled = NO;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^ {
+            weakSelf.coventButton.userInteractionEnabled = YES;
+        });
+    }];
 }
 
 
@@ -344,210 +383,6 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
-
-
-#pragma mark- 检测授权状态
-
--(void)checkSpeechFunction{
-    [SFSpeechRecognizer  requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            switch (status) {
-                case SFSpeechRecognizerAuthorizationStatusNotDetermined:
-                    [self setCovenState:NO andShowStr:@"语音识别未授权"];
-                    break;
-                case SFSpeechRecognizerAuthorizationStatusDenied:
-                    [self setCovenState:NO andShowStr:@"用户拒接使用语音识别"];
-                    break;
-                case SFSpeechRecognizerAuthorizationStatusRestricted:
-                    [self setCovenState:NO andShowStr:@"设备不支持语音识别"];
-                    break;
-                case SFSpeechRecognizerAuthorizationStatusAuthorized:
-                    [self setCovenState:YES andShowStr:@"可以进行语音识别"];
-                    break;
-                    
-                default:
-                    break;
-            }
-            
-        });
-    }];
-}
-
--(void)setCovenState:(BOOL )enable andShowStr:(NSString *)str{
-    
-    if (!enable) {
-        self.coventButton.backgroundColor = [UIColor lightGrayColor];
-        self.coventButton.userInteractionEnabled = NO;
-        [SVProgressHUD showErrorWithStatus:str];
-    }else{
-        self.coventButton.backgroundColor = [UIColor orangeColor];
-        self.coventButton.userInteractionEnabled = YES;
-        [SVProgressHUD showSuccessWithStatus:str];
-    }
-    
-    
-}
-
-#pragma mark- 录音操作
-
--(void)startSpeech{
-    
-    self.textView.text = @"";
-   
-    if (self.coventButton.isSelected) {
-        
-        [self stopAvaudio];
-        
-        [self.coventButton setTitle:@"开始录音" forState:UIControlStateNormal];
-        self.coventButton.selected = NO;
-    }else{
-        
-        [self startAvaudio];
-        
-        [self.coventButton setTitle:@"结束录音" forState:UIControlStateNormal];
-        self.coventButton.selected = YES;
-    }
-}
-
-#pragma mark- 识别语音
-
-- (void)setupTimer {
-    self.nonVoiceInterVal = [[NSDate date] timeIntervalSince1970];
-    [self.monitor record];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
-}
-
-
-// 结束的方法
-- (void)updateTimer {
-
-    [self.monitor updateMeters];
-    
-    // 音频功率的平均值,安静的办公室约为-80，完全没有声音-160.0，0是最大音量
-    float power = [self.monitor peakPowerForChannel:0];
-    
-    self.instLabel.text = [NSString stringWithFormat:@"语音识别中...\n音频功率%.2f",power];
-
-    if (power > -30) {
-        self.nonVoiceInterVal = [[NSDate date] timeIntervalSince1970];
-
-        
-    }else{
-        NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-        
-        if (self.textView.text.length>0) {
-            if (now - self.nonVoiceInterVal > 1) {
-                NSLog(@"本次录音结束");
-                [self stopAvaudio];
-            }
-        }else{
-            if (now - self.nonVoiceInterVal > 5) {
-                NSLog(@"未获取到声音");
-                [self stopAvaudio];
-            }
-        }
-        
-    }
-    
-}
-
-
-- (void)startAvaudio{
-    
-    [SVProgressHUD showWithStatus:@"识别中..."];
-
-    if (self.recognitionTask) {
-        [self.recognitionTask cancel];
-        self.recognitionTask = nil;
-    }
-    AVAudioSession *audioSession = [AVAudioSession new];
-    //音频类型，只播放
-    BOOL cartoryBool = [audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
-    //模式，最小系统
-    BOOL modeBool = [audioSession setMode:AVAudioSessionModeMeasurement error:nil];
-    //通用配置，若有其他音频，先中断，自身播放器进程完毕后，其他音频继续
-    BOOL activeBool = [audioSession setActive:true withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
-    if (cartoryBool || modeBool || activeBool) {
-        
-    }else{
-        
-        [SVProgressHUD showErrorWithStatus:@"设备不支持"];
-        return;
-    }
-    
-    //通过音频流创建请求
-    self.recognitionRequest = [SFSpeechAudioBufferRecognitionRequest new];
-    AVAudioInputNode *inputNode = self.audioEngine.inputNode;
-    //持续回调，不是等到说完一句再回调
-    self.recognitionRequest.shouldReportPartialResults = true;
-        
-    //创建识别任务
-    self.recognitionTask = [self.speechRecognizer recognitionTaskWithRequest:self.recognitionRequest resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
-        //语音处理是否完成
-        BOOL isFinal = false;
-        if (result) {
-            NSString *bestStr = [[result bestTranscription] formattedString];
-            isFinal = [result isFinal];
-            
-            self.textView.text = bestStr;
-            
-            if (isFinal) {
-                [self funOfMethod];
-            }
-        }
-        
-        
-        if (isFinal || error) {
-            //暂停录音引擎
-            [self.audioEngine stop];
-            [inputNode removeTapOnBus:0];
-            self.recognitionRequest = nil;
-            self.recognitionTask = nil;
-        }
-    }];
-    
-    //创建avaudio为buffer类，输出设置，
-    AVAudioFormat *recorfFormat = [inputNode outputFormatForBus:0];
-    [inputNode installTapOnBus:0 bufferSize:1024 format:recorfFormat block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
-        //拼接流文件
-        [self.recognitionRequest appendAudioPCMBuffer:buffer];
-    }];
-
-    //准备引擎
-    [self.audioEngine prepare];
-    //开启音频引擎
-    BOOL audioEngBool = [self.audioEngine startAndReturnError:nil];
-    if (!audioEngBool) {
-        [SVProgressHUD showErrorWithStatus:@"录音引擎启动失败"];
-    }
-    
-    [self setupTimer];
-    
-}
-
-- (void)stopAvaudio{
-    
-    //停止监听器并且删除文件
-    [self.monitor stop];
-    [self.monitor deleteRecording];
-    [self.timer invalidate];
-    [self.recognitionRequest endAudio];
-    
-    [self.coventButton setTitle:@"开始录音" forState:UIControlStateNormal];
-    self.coventButton.selected = NO;
-    
-    [SVProgressHUD dismiss];
-    
-}
-
-#pragma mark- 语音识别代理
-
--(void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available{
-    if (available) {
-        [SVProgressHUD showErrorWithStatus:@"录音不可使用"];
-    }
-}
-
 
 #pragma mark- 在本地方法库中寻找
 
